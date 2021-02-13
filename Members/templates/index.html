@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GfundsFrontend</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="shortcut icon" href="assets/img/chit.jpg">
+
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+</head>
+<body>
+	<!-- <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script> -->
+  <app-root></app-root>
+<script type="text/javascript" src="{% static 'runtime.js' %}"></script>
+  <script type="text/javascript" src="{% static 'polyfills.js' %}"></script>
+  <script type="text/javascript" src="{% static 'styles.js' %}"></script>
+  <script type="text/javascript" src="{% static 'vendor.js' %}"></script>
+  <script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
+</html>
+
+    <!-- Add New Component JS Above -->
+    <script>
+    function openNav() {
+        document.getElementById("gchit-site-navigation").style.width = "100%";
+        document.getElementById("gchit-site-navigation").style.display = "block";
+
+        document.getElementById("clickone").style.display = "none";
+        document.getElementById("clicktwo").style.display = "block";
+    }
+
+    function closeNav() {
+        document.getElementById("gchit-site-navigation").style.display = "none";
+        document.getElementById("clickone").style.display = "block";
+        document.getElementById("clicktwo").style.display = "none";
+
+    }
+
+    $(document).ready(function() {
+        $(window).on("resize", function(e) {
+            checkScreenSize();
+        });
+        checkScreenSize();
+
+        function checkScreenSize() {
+            console.log('inside the chechhjg');
+            var newWindowWidth = $(window).width();
+            if (newWindowWidth < 900) {
+                $(".gchit-main-navigation ul li a,.gchit-main-navigation ul li span").click(function() {
+                    $(".gchit-main-navigation").hide();
+                    $("#clicktwo").hide();
+                    $("#clickone").css("display", "block");
+                });
+            } else {
+                $(".gchit-main-navigation ul li a,.gchit-main-navigation ul li span").click(function() {
+                    $(".gchit-main-navigation").css("display", "block");
+                    $(".gchit-main-navigation").show();
+                });
+            }
+        }
+    });
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>

@@ -1,0 +1,15 @@
+Administrations/migrations/*
+Foreman/migrations/*
+Members/migrations/*
+Rtm/migrations/*
+Gfundsbackend2/settings.py
+.idea/*
+Administration/migrations/
+Foreman/migrations/
+Members/migrations/
+Rtm/migrations/
+*.pyc
+debug.log
+static/
+
+

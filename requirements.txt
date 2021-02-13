@@ -1,0 +1,7 @@
+ Django==2.1
+ psycopg2-binary
+ djangorestframework
+ django-cors-headers
+ django-cors-headers
+ djangorestframework_jwt
+ python-dateutil
